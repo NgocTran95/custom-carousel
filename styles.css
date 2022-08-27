@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel {
+    position: relative;
+    margin: auto;
+}
+
+.carousel-btn {
+    height: 100%;
+    outline: none;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 50%;
+    padding: 0 20px;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: rgba(255,255,255,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255,255,255,0.05);
+    color: rgba(255,255,255);
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn.next {
+    right: 0;
+}
+
+.carousel .slide-container {
+    width: 60vw;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s linear;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.indicators-item {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.indicators-item.filled {
+    background-color: #fff;
+}
